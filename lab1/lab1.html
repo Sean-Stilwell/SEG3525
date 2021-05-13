@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Evaluation d'un interface usager</title>
+        <link rel="stylesheet" type="text/css" href="lab1.css">
+    </head>
+    <body>
+        <h1>Évaluation de Loblaws.ca</h1>
+        <p>Veuillez visiter le site web de <a href="https://www.loblaws.ca/">Loblaws</a> et répondre au questionnaire suivant.</p>
+        <a href="https://www.loblaws.ca/"><img src="./img.png"></a>
+        <form>
+            <div class="question">
+                <p>Avez-vous déjà visité ce site Web?</p>
+                <input type="radio" id="ouiradio" name="ouinon" value="oui">
+                <label for="ouiradio">Oui</label><br>
+                <input type="radio" id="nonradio" name="ouinon" value="non">
+                <label for="nonradio">Non</label><br>
+            </div>
+            <div class="question">
+                <p>Est-ce que ce site Web est meilleur, pire, ou à l'égalité avec d'autres épiceries pour l'utilisabilité</p>
+                <select name="comparaison">
+                    <option value="meilleur">Meilleur</option>
+                    <option value="egale">Égalité</option>
+                    <option value="pire">Pire</option>
+                </select>
+            </div>
+            <div class="question">
+                <p>Choisissez chaque caractéristique satisfait par ce site Web.</p>
+                <input type="checkbox" id="check1" name="fonctionnement" value="fonctionnement">
+                <label for="check1">Fonctionnement correct</label><br>
+                <input type="checkbox" id="check2" name="coherence" value="coherence">
+                <label for="check2">Cohérence</label><br>
+                <input type="checkbox" id="check3" name="efficacite" value="efficacite">
+                <label for="check3">Efficacité</label><br>
+                <input type="checkbox" id="check4" name="utilsabilite" value="utilsabilite">
+                <label for="check4">Utilisabilité</label><br>
+                <input type="checkbox" id="check5" name="fiabilite" value="fiabilite">
+                <label for="check5">Fiabilité</label><br>
+                <input type="checkbox" id="check6" name="securite" value="securite">
+                <label for="check6">Sécurité et intégrité des données</label><br>
+            </div>
+            <div class="question">
+                <p>Le site Web est facile à utiliser</p>
+                <label for="scale">Fortement en désaccord</label>
+                <input type="radio" name="scale" value="one">
+                <input type="radio" name="scale" value="two">
+                <input type="radio" name="scale" value="three">
+                <input type="radio" name="scale" value="four">
+                <input type="radio" name="scale" value="five">
+                <label for="scale">Fortement d'accord</label>
+            </div>
+            <div class="question">
+                <p>Quelle épicerie visitez-vous le plus souvent?</p>
+                <label for="epicerie">Épicerie</label>
+                <input type="text" id="epicerie" name="epicerie">
+            </div>
+            <div class="question">
+                <p>Avez vous d'autres commentaires sur le site Web? Veuillez mettre-les ici.</p>
+                <textarea rows="6" cols="50"></textarea>
+            </div>
+            <div class="question">
+                <p>Revoir vos réponses avant de soumettre.</p>
+                <input type="submit" value="Soumettre">
+            </div>
+        </form>
+        <footer>
+            Site Web conçu par Sean Stilwell (300053246)
+        </footer>
+    </body>
+</html>
