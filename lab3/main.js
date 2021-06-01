@@ -21,7 +21,11 @@ function openInfo(evt, tabName) {
 
 }
 
-
+// On loading, initializes the product list and opens client information.
+function start(){
+	populateListProductChoices('displayProduct');
+	openInfo(event, 'Client');
+}
 	
 // generate a checkbox list from a list of products
 // it makes each product name as the label for the checkbos
@@ -99,6 +103,6 @@ function selectedItems(){
 		
 	// add paragraph and total price
 	c.appendChild(para);
-	c.appendChild(document.createTextNode("Total Price is " + getTotalPrice(chosenProducts)));
+	c.appendChild(document.createTextNode("Total Price is $" + getTotalPrice(chosenProducts)));
 		
 }

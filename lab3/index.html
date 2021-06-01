@@ -6,20 +6,20 @@
     <title>Rideau Groceries</title>
   </head>
 
-  <body onload="populateListProductChoices('displayProduct')">
+  <body onload="start()">
     <h1>Rideau Groceries</h1>
 
-    <!-- Tab links, each one with an onclick event associated with it -->
+    <!-- Tab links, each one with an onclick event associated with it REPLACE WITH BREADCRUMBS -->
     <div class="tab">
       <button class="tablinks" onclick="openInfo(event, 'Client')">Client</button>
       <button class="tablinks" onclick="openInfo(event, 'Products')">Products</button>
-      <button class="tablinks" onclick="openInfo(event, 'Cart')">Cart</button>
+      <button class="tablinks" onclick="openInfo(event, 'Cart')">Checkout</button>
     </div>
 
     <!-- Tab content -->
     <div id="Client" class="tabcontent">
       <h3>Client Information</h3>
-      <p>Tell us a bit about you, this will help us recommend good products for you.</p>
+      <p>Let us know if you have any dietary restrictions. We won't recommend products that break your restrictions.</p>
 
       <input type="checkbox" id="vegetarian" name="vegetarian" value="Vegetarian" onchange="populateListProductChoices('displayProduct')">
       <label for="vegetarian">I would like Vegetarian options </label><br>
@@ -30,24 +30,36 @@
       <input type="checkbox" id="lactosefree" name="lactosefree" value="lactosefree" onchange="populateListProductChoices('displayProduct')">
       <label for="lactosefree">I would like Lactose-Free options </label><br>
       <input type="checkbox" id="nutsfree" name="nutsfree" value="nutsfree" onchange="populateListProductChoices('displayProduct')">
-      <label for="nutsfree">I would like Nut-Free options </label><br>
+      <label for="nutsfree">I would like Nut-Free options </label><br><br>
+
+      <button id="proceed" type="button" class="block" onclick="openInfo(event, 'Products')">
+        Proceed to Product Selection
+      </button>
     </div>
 
     <div id="Products" class="tabcontent">
-      <h3>Your targeted products</h3>
+      <h3>Your Products</h3>
       <p>We preselected products based on your restrictions.</p>
       Choose items to buy:
       <div id="displayProduct"></div> <!-- Add way to sort from price low-high -->
       <br>
       <button id="addCart" type="button" class="block" onclick="selectedItems()">
         Add selected items to cart.
-      </button> 
+      </button> <br><br>
+      <button id="return" type="button" class="block" onclick="openInfo(event, 'Client')">
+        Return to Client Info
+      </button>
+      <button id="proceed" type="button" class="block" onclick="openInfo(event, 'Cart')">
+        Proceed to Checkout
+      </button>
     </div>
 
     <div id="Cart" class="tabcontent">
-      <h3>Cart</h3>
-      <p>Here is your cart.</p>
-      <div id="displayCart"></div>
+      <h3>Checkout</h3>
+      <div id="displayCart"></div><br>
+      <button id="return" type="button" class="block" onclick="openInfo(event, 'Products')">
+        Return to Product Selection
+      </button>
     </div>
     <br>
     <br>
