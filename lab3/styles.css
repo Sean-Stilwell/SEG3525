@@ -1,10 +1,21 @@
 * {
   text-align: center;
-  font-family:Arial, Helvetica, sans-serif;
 }
 
 body {
-  background-color: #fffaf5;
+  background-color: #d2e4eb;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.header {
+  border: 1px solid rgb(170, 170, 170);
+  background-color:  #a2d3e6;
+  font-style: italic;
+}
+
+.title {
+  font-size:x-large;
+  font-family: "Dancing Script", "Pacifico", cursive;
 }
 
 
@@ -35,12 +46,4 @@ body {
 /* Create an active/current tablink class */
 .tab button.active {
   background-color: #ccc;
-}
-
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
 }
