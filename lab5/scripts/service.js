@@ -50,6 +50,7 @@ $(document).ready(function(){
             if (userdate < today){
                 booking = false;
                 alert("Failed to book. Please choose a future day for your appointment.")
+                return;
             }
 
             // Adapted from the source above
@@ -58,14 +59,44 @@ $(document).ready(function(){
             if (time < 8 || time > 18){
                 booking = false;
                 alert("Failed to book. Our clinic is only open from 8:00 AM to 6:00 PM.")
+                return;
+            }
+
+            var creditcard = $("#cc_number").val();
+            if (creditcard.length != 16){
+                booking = false;
+                alert("Failed to book. Your credit card number was not a valid length.");
+                console.log(creditcard);
+                console.log(creditcard.length);
+                return;
+            }
+
+            var ccv = $("#cvv").val();
+            if (ccv.length != 3){
+                booking = false;
+                alert("Failed to book. Your CVV was not a valid length.");
+                return;
+            }
+
+            var phone = $("#phone").val();
+            if (phone.length != 12){
+                booking = false;
+                alert("Failed to book. Your phone number should be in the format XXX-XXX-XXXX");
+                console.log(phone.length)
+                return;
+            }
+
+            var email = $("#email").val();
+            if (!validateEmail(email)){
+                booking = false;
+                alert("Failed to book. Your email was not valid.");
+                return;
             }
         }
         if (booking) {
             alert("Your appointment is booked!");
             $("#booking").modal('hide');
         }
-            alert(userdate < today);
-            
     });
 
     // Options for the modal. Allow us to only show the active form the user is working on
