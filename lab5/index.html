@@ -1,0 +1,286 @@
+<html>
+    <head>
+        <title>Vanier Veterinary Clinic</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">  
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="scripts/service.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="container p-3 my-3 bg-primary text-white" style="text-align: center;">
+                <h1 style="font-family: 'Pacifico', cursive;">
+                    <img src="images/paw.png" height="80" width="80">
+                    Vanier Veterinary Clinic
+                    <img src="images/paw.png" height="80" width="80">
+                </h1>
+                <p style="margin-top:-10px;"><em>Vanier's Choice for Animal Care Since 1998</em></p>
+            </div>
+
+            
+            <nav class="navbar navbar-expand-md bg-light navbar-light">
+                <a class="navbar-brand" href="#">Navigation</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                    <ul class="navbar-nav">
+                        <li class="nav-item" style="padding-right:10px;">
+                            <a class="nav-link" href="#about_us"><img src="icons/about.png" alt="About Us" style="width:25px; padding-right:5px;">About Us</a>
+                        </li>
+                        <li class="nav-item" style="padding-right:10px;">
+                            <a class="nav-link" href="#services"><img src="icons/services.png" alt="Services" style="width:30px; padding-right:5px;">Our Services</a>
+                        </li>
+                        <li class="nav-item" style="padding-right:10px;">
+                            <a class="nav-link" href="#experts"><img src="icons/experts.png" alt="Experts" style="width:40px; padding-right:5px;">Our Experts</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-top: 10px;">
+                <strong><img src="icons/coronavirus.png" alt="logo" style="width:30px; padding-right:5px;"> COVID-19:</strong> Due to the current coronavirus pandemic, please ensure to wear a mask and wash your hands prior to entering our clinic. Non-essential services (such as grooming) 
+                are suspended until further notice.
+            </div>
+
+            <div class="card p-3 my-3" id="about_us">
+                <div class="card-body">
+                    <img src="images/header.jpeg" class="mx-auto d-block" style="width:70%"><br>
+                    <h2>About Us</h2>
+                    <p>
+                        Vanier Veterinary Clinic has been taking care of pets for the Vanier area since 1998. We are passionate about supporting owners of all sorts of animals. We specialize in catering to 
+                        dogs and cats but can provide services for many other pets or animals. We provide a warm and loving atmosphere for your pet to ensure they are never scared while in our care.
+                    </p>
+                    <h4>Our Location</h4>
+                    <p>
+                        Our clinic is located near the Rideau River in Vanier. Our current building was constructed in 2016 and features all the amenities needed in a modern clinic. Plus, our proximity to the 
+                        Rideau River and trails makes it a great location to walk dogs.
+                    </p>
+                    <div class="row">
+                        <div class="col col-xl-1 col-lg-1 col-md-2 col-sm-2">
+                            <img src="images/paw-dark.png" height="80" width="80">
+                        </div>
+                        <div class="col col-xl-9 col-lg-9 col-md-8 col-sm-8">
+                            Vanier Veterinary Clinic <br>
+                            26 McArthur Avenue <br>
+                            Vanier, ON <br>
+                            K1L 6R2
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card p-3 my-3" id="services">
+                <div class="card-body">
+                    <h2>Our Services</h2>
+                    <table class="table">
+                        <tr>
+                            <th scope="col"><h4>Service</h4></th>
+                            <th scope="col"><h4>Description</h4></th>
+                            <th scope="col"><h4>Cost</h4></th>
+                            <th scope="col"><h4>Book</h4></th>
+                        </tr>
+                        <tr>
+                            <td>Vaccination</td>
+                            <td>Vaccinations for your pets are essential to ensure their wellbeing. We have all needed vaccinations on-hand for your pet.</td>
+                            <td>$20 (Free with Check-Up booking)</td>
+                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                        </tr>
+                        <tr>
+                            <td>Check-ups & Preventative Care</td>
+                            <td>Annual check-ups are essential to ensure continued wellbeing. We will make sure that your pet isn't experiencing potential illnesses. Includes free vaccinations.</td>
+                            <td>$50</td>
+                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                        </tr>
+                        <tr>
+                            <td>In-House Diagnostics</td>
+                            <td>If your pet seems unwell or is incapable of travel, we can visit your house and perform a diagnostic there, ensuring they receive the care they need from their comfortable home.</td>
+                            <td>$75</td>
+                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                        </tr>
+                        <tr>
+                            <td>Surgery</td>
+                            <td>We do many routine surgical operations such as spaying or neutering. We can also provide many other orthopedic surgeries. Please note that we <strong>do not</strong> perform declawing or cosmetic alterations.</td>
+                            <td>$100</td>
+                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                        </tr>
+                        <tr>
+                            <td>Dentistry</td>
+                            <td>Your pet's dental health is as important as yours. We can provide a variety of services for your pet's teeth and ensure they are well taken care of.</td>
+                            <td>$60</td>
+                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="card p-3 my-3" id="experts">
+                <div class="card-body">
+                    <h2>Our Experts</h2>
+                    <div class="row">
+                        <div class="card" style="width:13rem; margin-right:10px;">
+                            <img class="card-img-top" src="images/1.png">
+                            <div class="card-body">
+                                <h4 class="card-title">Dr. Stephanie Thibault</h4>
+                                <p class="card-text">
+                                    Dr. Thibault has been a vet at the clinic since 2001. She has taken care of over 2000 cats and dogs in that time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card" style="width:13rem; margin-right:10px;">
+                            <img class="card-img-top" src="images/3.png">
+                            <div class="card-body">
+                                <h4 class="card-title">Dr. Allan Smith</h4>
+                                <p class="card-text">
+                                    Dr. Smith is a talented vet who specializes in preventative care for dogs and cats and has performed over 10,000 check-ups.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card" style="width:13rem; margin-right:10px;">
+                            <img class="card-img-top" src="images/6.png">
+                            <div class="card-body">
+                                <h4 class="card-title">Dr. Marie Baker</h4>
+                                <p class="card-text">
+                                    Dr. Baker is a surgery specialist and is capable of providing a variety of treatments on all animals.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="card p-1 my-5">
+                    <p style="margin-bottom:0;">Site Web conçu par <a href="http://www.seanstilwell.ca">Sean Stilwell</a></p>
+            </div>
+
+            <div class="modal" id="booking">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1>Booking Form</h1>
+                        </div>
+                        <div class="modal-body">
+                            <button ty-e="button" class="btn btn-primary" id="appt_button">Appointment Info</button>
+                            <form id="appt_info">
+                                <div class="form-group">
+                                    <label for="pet_name">Pet Name:</label>
+                                    <input type="text" class="form-control" placeholder="Enter your pet's name" id="pet_name" title="Your pet's name, so we can review their records">
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Date:</label>
+                                    <input type="date" class="form-control" id="date" title="The date you would like to book the appointment">
+                                </div>
+                                <div class="form-group">
+                                    <label for="time">Time:</label>
+                                    <input type="time" class="form-control" id="time" title="The time you would like to book the appointment">
+                                </div>
+                                <div class="form-group">
+                                    <label for="service">Service Needed</label>
+                                    <select class="form-control" id="service" title="The service your pet requires">
+                                        <option>Vaccination</option>
+                                        <option>Check-up & Preventative Care</option>
+                                        <option>In-House Diagnostic</option>
+                                        <option>Surgery</option>
+                                        <option>Dentistry</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="doctor">Doctor Name</label>
+                                    <select class="form-control" id="doctor" title="The doctor you would like to meet">
+                                        <option>Dr. Stephanie Thibault</option>
+                                        <option>Dr. Allan Smith</option>
+                                        <option>Dr. Marie Baker</option>
+                                    </select>
+                                </div>
+                            </form>
+                            <br>
+                            <br>
+                            <button ty-e="button" class="btn btn-primary" data-toggle="collapse" data-target="#personal_info" id="personal_button">Personal Info</button>
+                            <form id="personal_info" class="collapse">
+                                <div class="form-group">
+                                    <label for="name">Name:</label>
+                                    <input type="text" class="form-control" placeholder="Enter your full name" id="name" title="Your first and last name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email:</label>
+                                    <input type="email" class="form-control" placeholder="Enter your email" id="email" title="Your email address, your confirmation will be sent here.">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone:</label>
+                                    <input type="tel" class="form-control" placeholder="Enter your phone number" id="phone" title="Your phone number so we can contact you for any concerns or questions">
+                                </div>
+                            </form>
+                            <br>
+                            <br>
+                            <button ty-e="button" class="btn btn-primary" data-toggle="collapse" data-target="#payment" id="payment_button">Payment Info</button>
+                            <form id="payment" class="collapse" style="margin: 15px;">
+                                <div class="alert alert-success mx-auto d-block" style="width:100%;">
+                                    <img src="icons/card.png" alt="Payment" style="width:25px; padding-right:5px;"> Your credit card is required to reserve the appointment. A no-show will be charged the regular booking fee + a $25 penalty.
+                                </div>
+                                <div class="row form-group">
+                                    <label for="ch_name">Cardholder Name:</label>
+                                    <input type="text" class="form-control" placeholder="Enter the name as it appears on the card" id="ch_name" title="Your name as it appears on your credit card">
+                                </div>
+                                <div class="row form-group">
+                                    <label for="cc_number">Credit Card Number:</label>
+                                    <input type="text" class="form-control" placeholder="0000 0000 0000 0000" id="cc_number" title="The number displayed on the front of your credit card">
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="form-group col-sm-4">
+                                        <label for="ccmonth">Month</label>
+                                        <select class="form-control" id="ccmonth" title="The expiry month shown on your credit card.">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                            <option>7</option>
+                                            <option>8</option>
+                                            <option>9</option>
+                                            <option>10</option>
+                                            <option>11</option>
+                                            <option>12</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="ccyear">Year</label>
+                                        <select class="form-control" id="ccyear" title="The expiry year shown on your credit card.">
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                            <option>2024</option>
+                                            <option>2025</option>
+                                            <option>2026</option>
+                                            <option>2027</option>
+                                            <option>2028</option>
+                                            <option>2029</option>
+                                            <option>2030</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-sm-4">
+                                        <label for="cvv">CVV/CVC</label>
+                                        <input class="form-control" id="cvv" type="text" placeholder="123" title="The 3-digit security code, typically found on the back of your credit card.">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button id="submit_booking" type="button" class="btn btn-primary">Book</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    </body>
+</html>
