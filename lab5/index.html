@@ -20,13 +20,12 @@
                 <p style="margin-top:-10px;"><em>Vanier's Choice for Animal Care Since 1998</em></p>
             </div>
 
-            
             <nav class="navbar navbar-expand-md bg-light navbar-light">
                 <a class="navbar-brand" href="#">Navigation</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <div class="collapse navbar-collapse" id="collapsibleNavbar" style="font-weight:bolder;">
                     <ul class="navbar-nav">
                         <li class="nav-item" style="padding-right:10px;">
                             <a class="nav-link" href="#about_us"><img src="icons/about.png" alt="About Us" style="width:25px; padding-right:5px;">About Us</a>
@@ -42,13 +41,13 @@
             </nav>
 
             <div class="alert alert-warning alert-dismissible fade show" role="alert" style="margin-top: 10px;">
-                <strong><img src="icons/coronavirus.png" alt="logo" style="width:30px; padding-right:5px;"> COVID-19:</strong> Due to the current coronavirus pandemic, please ensure to wear a mask and wash your hands prior to entering our clinic. Non-essential services (such as grooming) 
+                <strong><img src="icons/coronavirus.png" alt="coronavirus" style="width:30px; padding-right:5px;"> COVID-19:</strong> Due to the current coronavirus pandemic, please ensure to wear a mask and wash your hands prior to entering our clinic. Non-essential services (such as grooming) 
                 are suspended until further notice.
             </div>
 
             <div class="card p-3 my-3" id="about_us">
                 <div class="card-body">
-                    <img src="images/header.jpeg" class="mx-auto d-block" style="width:70%"><br>
+                    <img src="images/header.jpeg" class="mx-auto d-block" style="width:80%"><br>
                     <h2>About Us</h2>
                     <p>
                         Vanier Veterinary Clinic has been taking care of pets for the Vanier area since 1998. We are passionate about supporting owners of all sorts of animals. We specialize in catering to 
@@ -59,17 +58,46 @@
                         Our clinic is located near the Rideau River in Vanier. Our current building was constructed in 2016 and features all the amenities needed in a modern clinic. Plus, our proximity to the 
                         Rideau River and trails makes it a great location to walk dogs.
                     </p>
+                    <br>
+                    <!-- SOURCE: https://maps-generator.com/ -->
                     <div class="row">
-                        <div class="col col-xl-1 col-lg-1 col-md-2 col-sm-2">
-                            <img src="images/paw-dark.png" height="80" width="80">
+                        <div class="col">
+                            <iframe width="650" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=650&amp;height=450&amp;hl=en&amp;q=17%20McArthur%20Avenue%20Vanier+(Vanier%20Veterinary%20Clinic)&amp;t=&amp;z=16&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>                        
                         </div>
-                        <div class="col col-xl-9 col-lg-9 col-md-8 col-sm-8">
-                            Vanier Veterinary Clinic <br>
-                            26 McArthur Avenue <br>
-                            Vanier, ON <br>
-                            K1L 6R2
+                        <div class="col">
+                            <div class="row">
+                                <div class="col col-xl-3 col-lg-3 col-md-3 col-sm-3">
+                                    <img src="images/paw-dark.png" height="80" width="80">
+                                </div>
+                                <div class="col col-xl-7 col-lg-7 col-md-7 col-sm-7">
+                                    Vanier Veterinary Clinic <br>
+                                    17 McArthur Avenue <br>
+                                    Vanier, ON <br>
+                                    K1L 6R2
+                                </div>
+                            </div><br>
+                            <h5>Clinic Hours</h5>
+                            Appointments are available at the following times<br>
+                            <strong>Monday: </strong> 8:00 AM - 6:00 PM <br>
+                            <strong>Tuesday: </strong> 8:00 AM - 6:00 PM <br>
+                            <strong>Wednesday: </strong> 8:00 AM - 6:00 PM <br>
+                            <strong>Thursday: </strong> 8:00 AM - 6:00 PM <br>
+                            <strong>Friday: </strong> 8:00 AM - 6:00 PM <br>
+                            <strong>Saturday: </strong> 8:00 AM - 6:00 PM <br>
+                            <strong>Sunday: </strong> Closed <br> <br>
+                            <div class="alert alert-success mx-auto d-block" style="width:100%;">
+                                We offer 24/7 walk-in service for emergency care only.
+                            </div>
                         </div>
-                    </div>
+                    </div><br>
+                    <h4>Contact Us</h4>
+                    <p>
+                        Feel free to reach out to our phone line during our operating hours, or to our email at any time. We respond promptly to all queries!
+                    </p>
+                    <ul style="margin-top:-10px;">
+                        <img src="icons/phone_white.png" alt="About Us" style="width:25px; padding-right:5px;"> 613-450-4500<br>
+                        <img src="icons/email_white.png" alt="About Us" style="width:25px; padding-right:5px;"> info@vaniervetclinic.ca
+                    </ul>
                 </div>
             </div>
 
@@ -87,31 +115,31 @@
                             <td>Vaccination</td>
                             <td>Vaccinations for your pets are essential to ensure their wellbeing. We have all needed vaccinations on-hand for your pet.</td>
                             <td>$20 (Free with Check-Up booking)</td>
-                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                            <td><button id="booking_button1" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
                         </tr>
                         <tr>
                             <td>Check-ups & Preventative Care</td>
                             <td>Annual check-ups are essential to ensure continued wellbeing. We will make sure that your pet isn't experiencing potential illnesses. Includes free vaccinations.</td>
                             <td>$50</td>
-                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                            <td><button id="booking_button2" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
                         </tr>
                         <tr>
                             <td>In-House Diagnostics</td>
                             <td>If your pet seems unwell or is incapable of travel, we can visit your house and perform a diagnostic there, ensuring they receive the care they need from their comfortable home.</td>
                             <td>$75</td>
-                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                            <td><button id="booking_button3" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
                         </tr>
                         <tr>
                             <td>Surgery</td>
                             <td>We do many routine surgical operations such as spaying or neutering. We can also provide many other orthopedic surgeries. Please note that we <strong>do not</strong> perform declawing or cosmetic alterations.</td>
                             <td>$100</td>
-                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                            <td><button id="booking_button4" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
                         </tr>
                         <tr>
                             <td>Dentistry</td>
                             <td>Your pet's dental health is as important as yours. We can provide a variety of services for your pet's teeth and ensure they are well taken care of.</td>
                             <td>$60</td>
-                            <td><button id="booking_button" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
+                            <td><button id="booking_button5" type="button" class="btn btn-primary" data-toggle="modal" data-target="#booking" title="Click to make a booking with us">Book</button></td>
                         </tr>
                     </table>
                 </div>
@@ -148,14 +176,46 @@
                                 </p>
                             </div>
                         </div>
+                        <div class="card" style="width:13rem; margin-right:10px;">
+                            <img class="card-img-top" src="images/5.png">
+                            <div class="card-body">
+                                <h4 class="card-title">Dr. Phillip Rogers</h4>
+                                <p class="card-text">
+                                    Dr. Rogers is a dental care specialist who has cared for a variety of animals since 1990. 
+                                </p>
+                            </div>
+                        </div>
                     </div>
                     
                 </div>
             </div>
 
-            <div class="card p-1 my-5">
-                    <p style="margin-bottom:0;">Site Web conçu par <a href="http://www.seanstilwell.ca">Sean Stilwell</a></p>
-            </div>
+            <footer class="bg-light" style="text-align: center;">
+                <br>
+
+                <h1 style="font-family: 'Pacifico', cursive;">
+                    <img src="images/paw-dark.png" height="70" width="70">
+                    Vanier Veterinary Clinic
+                    <img src="images/paw-dark.png" height="70" width="70">
+                </h1>                
+                <div class="row">
+                    <div class="col" style="text-align: right; padding-right:75px;">
+                        <strong>Contact Us!</strong> <br>
+                        <img src="icons/phone_white.png" alt="About Us" style="width:25px; padding-right:5px;"> 613-450-4500<br>
+                        <img src="icons/email_white.png" alt="About Us" style="width:25px; padding-right:5px;"> info@vaniervetclinic.ca
+                    </div>
+                    <div class="col" style="text-align: left; padding-left:75px;">
+                        Vanier Veterinary Clinic <br>
+                        17 McArthur Avenue <br>
+                        Vanier, ON <br>
+                        K1L 6R2
+                    </div>
+                </div>
+                <br>
+                Website designed by <a href="https://www.seanstilwell.ca">Sean Stilwell</a>
+                <br><br>
+            </footer>
+            <br>
 
             <div class="modal" id="booking">
                 <div class="modal-dialog">
@@ -194,6 +254,7 @@
                                         <option>Dr. Stephanie Thibault</option>
                                         <option>Dr. Allan Smith</option>
                                         <option>Dr. Marie Baker</option>
+                                        <option>Dr. Phillip Rogers</option>
                                     </select>
                                 </div>
                             </form>

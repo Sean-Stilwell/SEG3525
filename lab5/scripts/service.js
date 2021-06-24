@@ -46,10 +46,15 @@ $(document).ready(function(){
             var today = new Date().getTime();
             var userdate = $("#date").val();
             userdate = userdate.split("-");
-            userdate = new Date(userdate[0], userdate[1] - 1, userdate[2]).getTime();
-            if (userdate < today){
+            userdate = new Date(userdate[0], userdate[1] - 1, userdate[2]);
+            if (userdate.getTime() < today){
                 booking = false;
                 alert("Failed to book. Please choose a future day for your appointment.")
+                return;
+            }
+            if (userdate.getDay() == 0){
+                booking = false;
+                alert("Failed to book. The clinic is not open on Sundays for appointments.");
                 return;
             }
 
@@ -65,7 +70,7 @@ $(document).ready(function(){
             var creditcard = $("#cc_number").val();
             if (creditcard.length != 16){
                 booking = false;
-                alert("Failed to book. Your credit card number was not a valid length.");
+                alert("Failed to book. Your credit card number was not a valid length (16).");
                 console.log(creditcard);
                 console.log(creditcard.length);
                 return;
@@ -74,7 +79,7 @@ $(document).ready(function(){
             var ccv = $("#cvv").val();
             if (ccv.length != 3){
                 booking = false;
-                alert("Failed to book. Your CVV was not a valid length.");
+                alert("Failed to book. Your CVV was not a valid length (3).");
                 return;
             }
 
@@ -99,6 +104,15 @@ $(document).ready(function(){
         }
     });
 
+    // Function to validate an input email.
+    // SOURCE: https://www.w3resource.com/javascript/form/email-validation.php
+    function validateEmail(mail) {
+        if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(mail)) {
+            return true;
+        }
+        return false;
+    }
+
     // Options for the modal. Allow us to only show the active form the user is working on
     // SOURCE: https://www.w3schools.com/jquery/jquery_slide.asp
     $("#appt_button").click(function(){
@@ -121,7 +135,27 @@ $(document).ready(function(){
 
     // Tooltips for the forms and buttons.
     // SOURCE: Provided code.
-    $("#booking_button").tooltip({
+    $("#booking_button1").tooltip({
+        classes: {
+            "ui-tooltip": "highlight"
+        }
+    });
+    $("#booking_button2").tooltip({
+        classes: {
+            "ui-tooltip": "highlight"
+        }
+    });
+    $("#booking_button3").tooltip({
+        classes: {
+            "ui-tooltip": "highlight"
+        }
+    });
+    $("#booking_button4").tooltip({
+        classes: {
+            "ui-tooltip": "highlight"
+        }
+    });
+    $("#booking_button5").tooltip({
         classes: {
             "ui-tooltip": "highlight"
         }
