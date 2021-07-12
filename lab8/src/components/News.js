@@ -2,6 +2,22 @@ import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 
 const News = () => {
+    const english_version = [
+        "Market News",
+        "Here is some of the news that's rocked the markets recently: ",
+        "in"
+    ]
+    const french_version = [
+        "Actualités du marché",
+        "Voici des nouvelles qui ont affecté les marchés récemment :",
+        "dans"
+    ]
+
+    var active_language = english_version;
+    if (localStorage.getItem('language') == 'fr') {
+        active_language = french_version;
+    }
+
     var news = [
         {
             title: 'Dow Jones Futures: Apple, Google, Tech Titans Drive Stock Market Rally; Three Are In Buy Range',
@@ -50,14 +66,14 @@ const News = () => {
     return (  
         <div className="newspage" style={{marginLeft:"10%", marginRight:"10%"}}>
             <Container>
-                <h2>Market News</h2>
-                <p>Here is some of the news that's rocked the markets recently:</p>
+                <h2>{active_language[0]}</h2>
+                <p>{active_language[1]}</p>
                 {news.map((article) => (
                     <Card style={{flex:1, marginBottom:"20px"}}>
                         <Card.Body>
                             <Card.Title><a href="https://youtu.be/dQw4w9WgXcQ">{article.title}</a></Card.Title>
                             <Card.Text>
-                                <em>in {article.journal}, {article.time}</em> <br/><br/>
+                                <em>{active_language[2]} {article.journal}, {article.time}</em> <br/><br/>
                                 {article.content} <br/>
                             </Card.Text>
                         </Card.Body>

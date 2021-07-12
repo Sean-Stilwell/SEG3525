@@ -3,11 +3,54 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import Modal from 'react-bootstrap/Modal';
+import help from '../img/help.png';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 
 // BROWSE PAGE
 const Activity = () => {
+    const english_version = [
+        "Are you sure you want to buy ",
+        " shares for ",
+        "Congratulations, you now own ",
+        " shares in ",
+        "Browse Stocks",
+        "Available to Trade: ",
+        "Current Price: ",
+        "Buy",
+        "How many shares would you like to purchase of ",
+        "", // BLANK ON PURPOSE
+        "Purchase a Share",
+        "Purchase Price: ",
+        "Close",
+        "Purchase",
+        "You do not have enough money for this purchase. You can add funds on the Portfolio page.",
+        "You must be signed in to do that."
+    ]
+    const french_version = [
+        "Confirmer que vous voulez acheter ",
+        " actions pour ",
+        "Félicitations, vous avez acheté ",
+        " actions de ",
+        "Parcourir les actions",
+        "Disponible à l'échange : ",
+        "Prix actuel : ",
+        "Acheter",
+        "Combien d'actions dans ",
+        " voulez-vous acheter",
+        "Acheter une action",
+        "Prix total : ",
+        "Fermer",
+        "Acheter",
+        "Vous n'avez pas assez d'argent pour effectuer cet achat. Vous pouvez ajouter de l'argent sur la page Portfolio.",
+        "Il faut se connecter pour acheter des actions"
+    ]
+
+    var active_language = english_version;
+    if (localStorage.getItem('language') == 'fr') {
+        active_language = french_version;
+    }
+
     // Complete list of stocks with their current values
     var stocks = [
         {
@@ -65,8 +108,13 @@ const Activity = () => {
 
     // Given a stock's index, open the modal with the appropriate stock displayed
     function handleClick(index){
-        setStock(stocks[index]);
-        handleShow();
+        if (localStorage.getItem('signedin')){
+            setStock(stocks[index]);
+            handleShow();
+        }
+        else {
+            alert(active_language[15]);
+        }
     }
 
     // As the user changes the stock amount, we change the value
@@ -96,9 +144,14 @@ const Activity = () => {
         var amount = document.getElementById("stock_quantity").value;
         var price = (amount * currentStock.value).toFixed(2);
 
+        if (money < price){
+            alert(active_language[14]);
+            return;
+        }
+
         // TODO: Ask for permission before purchasing a stock
         if (amount > 0){
-            alert("Are you sure you want to buy " + amount + " shares for $" + price);
+            alert(active_language[0] + amount + active_language[1] + price);
         }
 
         // Mock-loading time
@@ -133,7 +186,7 @@ const Activity = () => {
 
         // We also update their currently owned stocks to reflect it
         localStorage.setItem('stocks', JSON.stringify(usersStocks));
-        alert("Congratulations, you now own " + amount + " shares in " + currentStock.name);
+        alert(active_language[2] + amount + active_language[3] + currentStock.name);
     }
 
     // Sleep fumctopn tp return a simulated sleep time.
@@ -141,11 +194,17 @@ const Activity = () => {
         return new Promise(resolve => setTimeout(resolve, ms));
     }
 
+    function displayCash(){
+        if (localStorage.getItem('signedin')){
+            return <h5>{active_language[5]} <strong>${money}</strong></h5>
+        }
+    }
+
     return (  
         <div className="activitypage" style={{marginLeft:"10%", marginRight:"10%"}}>
             <Container>
-                <h2>Browse Stocks</h2>
-                <h5>Available to Trade: <strong>${money}</strong></h5>
+                <h2>{active_language[4]}</h2>
+                {displayCash()}
                 <Row>
                     {stocks.map((stock, index) => (
                         <Col xs="3" key={stock.id}>
@@ -153,8 +212,8 @@ const Activity = () => {
                                 <Card.Body>
                                     <Card.Title>{stock.name}</Card.Title>
                                     <Card.Text>
-                                        Current Price: ${stock.value} <br/><br/>
-                                        <Button key={"button" + stock.id} variant="danger" onClick={handleClick.bind(this, index)} style={{marginLeft:"5px"}}>Buy</Button>
+                                        {active_language[6]} ${stock.value} <br/><br/>
+                                        <Button key={"button" + stock.id} variant="danger" onClick={handleClick.bind(this, index)} style={{marginLeft:"5px"}}>{active_language[7]}</Button>
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -164,20 +223,21 @@ const Activity = () => {
             </Container>
             <Modal show={show} onHide={handleClose}>
                 <Modal.Header closeButton>
-                    <Modal.Title>Purchase a Share</Modal.Title>
+                    <Modal.Title>{active_language[10]}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>
                     <form>
                         <label>
-                            How many shares would you like to purchase of {currentStock.name}?<br />
+                            {active_language[8]} {currentStock.name}{active_language[9]}?<br />
                             <input type="number" onChange={handleChange} name="stock_quantity" id="stock_quantity"/>
+                            <a><img src={help} style={{marginLeft:"10px", width:"25px", height:"25px"}}/></a>
                         </label><br/>
-                        <strong>Purchase Price: ${cost.toFixed(2)}</strong>
+                        <strong>{active_language[11]} ${cost.toFixed(2)}</strong>
                     </form>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={handleClose}>Close</Button>
-                    <Button variant="danger" onClick={submit}>Purchase</Button>
+                    <Button variant="secondary" onClick={handleClose}>{active_language[12]}</Button>
+                    <Button variant="danger" onClick={submit}>{active_language[13]}</Button>
                 </Modal.Footer>
             </Modal>
         </div>

@@ -5,6 +5,18 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const Learn = () => {
+    const english_version = [
+        "Learn with CanTrade",
+    ]
+    const french_version = [
+        "Apprendre avec CanTrade",
+    ]
+
+    var active_language = english_version;
+    if (localStorage.getItem('language') == 'fr') {
+        active_language = french_version;
+    }
+
     // Complete list of lessons to be displayed
     const [lessons, _] = useState(
         [
@@ -60,10 +72,19 @@ const Learn = () => {
         ]
     )
 
+    function getNotice(){
+        if (localStorage.getItem('language') == 'fr'){
+            return (
+                <p>Malheureusement, on offre les cours strictement en anglais à ce moment. Les cours en français seront disponibles sous-peu!</p>
+            );
+        }
+    }
+
     return (  
         <div className="learnpage" style={{marginLeft:"10%", marginRight:"10%"}}>
             <Container>
-                <h2>Learn with CanTrade</h2>
+                <h2>{active_language[0]}</h2>
+                {getNotice()}
                 <Row>
                     {lessons.map((lesson) => (
                         <Col xs="4" key={lesson.id}>
