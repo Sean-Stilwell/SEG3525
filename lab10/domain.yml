@@ -1,0 +1,95 @@
+version: '2.0'
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- inform
+- subscribe
+- thank_you
+- goodbye
+- unsubscribe
+- explanation
+slots:
+  email:
+    type: text
+    influence_conversation: true
+  reason:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+    - text: |
+        Hello! How can I help you?
+    - text: |
+        Hi!
+  utter_ask_email:
+    - text: |
+        What is your email address?
+  utter_subscribed:
+    - text: |
+        Check your inbox at {email} in order to finish subscribing to the newsletter!
+    - text: |
+        You're all set! Check your inbox at {email} to confirm your subscription.
+  utter_your_welcome:
+    - text: |
+        You're welcome.
+    - text: |
+        My pleasure.
+    - text: |
+        Happy to help.
+    - text: |
+        Any time!
+  utter_goodbye:
+    - text: |
+        Goodbye!
+    - text: |
+        Take care.
+    - text: |
+        Have a good day.
+    - text: |
+        Bye!
+  utter_unsubscribed:
+    - text: |
+        We're sorry to see you go. You are now unsubscribed.
+    - text: |
+        You will no longer receive our newsletter. You can resubscribe any time!
+    - text: |
+        You've been removed from our mailing list. We're sorry our emails bothered you.
+    - text: |
+        No problem, you'll no longer receive our newsletter.
+  utter_ask_reason:
+    - text: |
+        Could you tell us why you wanted to unsubscribe?
+    - text: |
+        Why did you want to unsubscribe?
+    - text: |
+        What was your reason for unsubscribing?
+    - text: |
+        For what reason do you want to unsubscribe?
+  utter_sympathy:
+    - text: |
+        We understand. We hope you'll come back soon!
+    - text: |
+        No problem. You won't receive emails any more.
+    - text: |
+        Understood. We've ended your subscription to our newsletter.
+    - text: |
+        We get it. You'll no longer receive our newsletter.
+actions:
+- '...'
+- utter_greet
+- utter_subscribed
+- utter_unsubscribed
+- utter_sympathy
+forms:
+  newsletter_form:
+    required_slots:
+      email:
+      - type: from_text
+  unsubscribe_form:
+    required_slots:
+      email:
+      - type: from_text
+      reason:
+      - type: from_text

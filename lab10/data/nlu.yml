@@ -1,0 +1,71 @@
+nlu:
+- intent: greet # Requirement 1a: Add 4 new training examples for greeting
+  examples: |
+    - Hi
+    - Hey!
+    - Hallo
+    - Good day
+    - Good morning
+    - Greetings
+    - Howdy
+    - It's nice to meet you
+    - Hey there
+
+- intent: subscribe
+  examples: |
+    - I want to get the newsletter
+    - Can you send me the newsletter?
+    - Can you sign me up for the newsletter?
+    - Please sign me up for the newsletter
+    - Add me to the newsletter
+    - I'd like to subscribe to the newsletter
+    - Can I subscribe to the newsletter
+
+- intent: inform
+  examples: |
+    - My email is example@example.com
+    - random@example.com
+    - Please send it to anything@example.com
+    - Email is something@example.com
+
+- intent: thank_you # Requirement 1b: Define a new thank-you intent
+  examples: |
+    - Thanks
+    - Thank you
+    - Thanks for the help
+    - Thank you for adding me
+    - I appreciate that
+    - Thanks a lot
+
+- intent: goodbye # Requirement 1c: Define
+  examples: |
+    - Bye
+    - Good bye
+    - Talk to you later
+    - Talk to you soon
+    - Have a good day
+    - See you later
+    - Take care
+
+- intent: unsubscribe # Requirement 2: Unsubscribe story
+  examples: |
+    - I don't want the newsletter
+    - Can you remove me from the newsletter?
+    - Can I stop getting the newsletter?
+    - Please stop sending me the newsletter
+    - Remove me from the newsletter
+    - Unsubscribe me from your newsletter
+    - Can I unsubscribe from the newsletter?
+    - Help me unsubscribe from the newsletter
+    - I would like to unsubscribe
+    - I'd like to unsubscribe
+
+- intent: explanation # Requirement 2: Unsubscribe reasons
+  examples: |
+    - I was receiving too many emails.
+    - Because I am no longer interested.
+    - Since I don't enjoy reading them now.
+    - I don't have any time to read them.
+    - Because you sent a lot of emails.
+    - My inbox was getting spammed.
+    - I don't want to read it any more.

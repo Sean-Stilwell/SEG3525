@@ -75,7 +75,7 @@ const Navbar = () => {
             localStorage.setItem('language', 'fr');
         }
         document.location.reload(true);
-    }
+    } 
 
     // Displays a welcome message if user is logged in, otherwise shows the log in / sign up button
     function displayLogIn(){

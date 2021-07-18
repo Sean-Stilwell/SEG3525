@@ -1,0 +1,43 @@
+rules:
+  - rule: activate subscribe form # When intent to subscribe is detected, we display this form.
+    steps:
+    - intent: subscribe
+    - action: newsletter_form
+    - active_loop: newsletter_form
+
+  # Allows the user to subscribe to the newsletter.
+  - rule: submit form
+    condition: # condition: form is active
+    - active_loop: newsletter_form
+    steps:
+    - action: newsletter_form # We display the subscribe form
+    - active_loop: null # We then deactivate the form
+    - action: utter_subscribed
+
+  # When intent to unsubscribe is detected, we display the form.
+  - rule: activate unsubscribe form
+    steps:
+    - intent: unsubscribe # When this intent is found...
+    - action: unsubscribe_form # We display the unsubscribe form
+    - active_loop: unsubscribe_form
+
+  # Allows the user to unsubscribe from the newsletter
+  - rule: submit unsub form
+    condition: # condition: form is active
+    - active_loop: unsubscribe_form 
+    steps:
+    - action: unsubscribe_form # We display the unsubscribe form
+    - active_loop: null # We then move on to the reason form
+    - action: utter_unsubscribed
+
+  # Goodbye message
+  - rule: say goodbye when user says goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+  # Thank you message
+  - rule: say thank you when user says thank you
+    steps:
+    - intent: thank_you
+    - action: utter_your_welcome

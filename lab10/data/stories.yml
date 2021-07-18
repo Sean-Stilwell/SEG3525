@@ -1,0 +1,25 @@
+stories: # Requirement 1d: Modify story to use thank you + goodbye
+  - story: greet and subscribe
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: subscribe
+    - action: newsletter_form
+    - active_loop: newsletter_form
+    - intent: thank_you
+    - action: utter_your_welcome
+    - intent: goodbye
+    - action: utter_goodbye
+
+
+  - story: greet and unsubscribe # Requirement 2: Add a new greet and unsubscribe story
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: unsubscribe
+    - action: unsubscribe_form
+    - active_loop: unsubscribe_form
+    - intent: thank_you
+    - action: utter_your_welcome
+    - intent: goodbye
+    - action: utter_goodbye
